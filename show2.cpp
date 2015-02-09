@@ -4,7 +4,7 @@
  *   respective implementation files for each class.
  */
 
-
+using namespace std;
 /**
  * showStructure for Date. Feel free to include this
  *   as part of your solution in Date.cpp.
