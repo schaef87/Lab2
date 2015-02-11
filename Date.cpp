@@ -11,8 +11,8 @@
 #include <iostream>
 
 Date::Date(){
-//	time_t  timev;
-//	time(&timev);
+	//	time_t  timev;
+	//	time(&timev);
 
 
 	time_t t = time(0);   // get time now
@@ -55,7 +55,7 @@ void Date::showStructure() const{
 }
 
 ostream& operator<<(ostream& out, const Date& date){
-	out << date.getDay() << " " << date.getMonth() << " " << date.getYear() << endl;
+	out << date.getDay() << " " << date.getMonth() << " " << date.getYear();
 
 	return out;
 }
@@ -86,6 +86,42 @@ int Date::daysInMonth(int month, int year){
 			return 30;
 		}
 	}
+}
+int Date::getDayOfWeek() const{
+	int nYears=0;
+	int nLeapYears=0;
 
+	for (int x=1901; x < year;x++){
+		nYears++;
+		if(Date::isLeapYear(x)){
+			nLeapYears++;
+		}
+	}
 
+	int nDaysToMonth=0;
+	for(int d=1;d<month;d++){
+		nDaysToMonth+=daysInMonth(d, year);
+	}
+	int dayOfWeek = ((1 + nYears + nLeapYears + nDaysToMonth + day) % 7);
+	return dayOfWeek;
+}
+bool Date::operator<(const Date& rhs) const{
+	if(year<rhs.getYear())
+		return true;
+	else if(month<rhs.getMonth()&&year==rhs.getYear())
+		return true;
+	else if(day<rhs.getDay()&&month==rhs.getMonth()&&year==rhs.getYear())
+		return true;
+
+	return false;
+
+}
+bool Date::operator==(const Date& rhs) const{
+	if(day==rhs.getDay()&&month==rhs.getMonth()&&year==rhs.getYear())
+			return true;
+	else return false;
+}
+bool Date::operator>(const Date& rhs) const{
+	Date tst(day,month,year);
+	return !(tst<rhs)&&!(tst==rhs);
 }

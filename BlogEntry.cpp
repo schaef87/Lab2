@@ -53,3 +53,20 @@ void BlogEntry::showStructure() const{
 	modified.showStructure();
 	cout << contents <<  endl;
 }
+
+void BlogEntry::printHTML(ostream& out) const{
+	cout << "<html>" << endl;
+	cout << "<body>" << endl;
+	cout << "<h1>" << author << "</h1>" << endl;
+	cout << "<p>" << endl;
+	cout << contents << endl;
+	cout << "</p>" << endl;
+	cout << "<p>" << endl;
+	cout << "Created: " << created << endl;
+	cout << "</p>" << endl;
+	cout << "<p>" << endl;
+	cout << "Last modified: "<< modified << endl;
+	cout << "</p>" << endl;
+	cout << "</body>" << endl;
+	cout << "</html>" << endl;
+}

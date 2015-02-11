@@ -5,6 +5,6 @@
 #define LAB2_TEST5	1		// Date operator<<
 #define LAB2_TEST6	1		// BlogEntry constructors
 #define LAB2_TEST7	1		// BlogEntry getters/setters
-#define LAB2_TEST8	0		// Exercise 1 - printHTML
-#define LAB2_TEST9	0		// Exercise 2 - getDayOfWeek
-#define LAB2_TEST10	0		// Exercise 3 - Date relational operators
+#define LAB2_TEST8	1		// Exercise 1 - printHTML
+#define LAB2_TEST9	1		// Exercise 2 - getDayOfWeek
+#define LAB2_TEST10	1		// Exercise 3 - Date relational operators
