@@ -22,7 +22,7 @@ BlogEntry::BlogEntry(const Text& initAuthor, const Text& initContents){
 
 Text BlogEntry::getAuthor() const{
 	return author;
-	}
+}
 
 Text BlogEntry::getContents() const{
 	return contents;
@@ -45,5 +45,10 @@ void BlogEntry::setContents(const Text& newContents){
 }
 
 void BlogEntry::showStructure() const{
-	cout << author << " " << created << " " << modified << " " << contents <<  endl;
+	cout << author << endl;
+	cout << "Created on: ";
+	created.showStructure();
+	cout << "Last Modified on: ";
+	modified.showStructure();
+	cout << contents <<  endl;
 }

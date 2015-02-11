@@ -29,8 +29,7 @@ class Text
     // Text operations
     int getLength () const;                          // # characters
     char operator [] ( int n ) const;                // Subscript
-    void clear ();                                  // Clear string
-    char* getText() const;
+    void clear ();                                   // Clear string
 
     // Output the string structure -- used in testing/debugging
     void showStructure () const;
