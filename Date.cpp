@@ -26,7 +26,11 @@ Date::Date(){
 
 Date::Date(int day, int month, int year) throw(logic_error){
 	if (day < 0 || month < 0 || year < 0){
-		throw logic_error("invalid date");
+		throw logic_error("Date Cannot be Negative Number");
+	} else if (day > 31){
+		throw logic_error("Day Cannot be Greater than 31");
+	} else if( month > 12){
+		throw logic_error("Month Cannot be Greater than 12");
 	}
 
 	this -> day = day;

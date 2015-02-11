@@ -45,6 +45,7 @@ void BlogEntry::setContents(const Text& newContents){
 }
 
 void BlogEntry::showStructure() const{
+	cout << "Posted by: ";
 	cout << author << endl;
 	cout << "Created on: ";
 	created.showStructure();
