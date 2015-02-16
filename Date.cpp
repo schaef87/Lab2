@@ -122,6 +122,12 @@ bool Date::operator==(const Date& rhs) const{
 	else return false;
 }
 bool Date::operator>(const Date& rhs) const{
-	Date tst(day,month,year);
-	return !(tst<rhs)&&!(tst==rhs);
+	if(year>rhs.getYear())
+			return true;
+		else if(month>rhs.getMonth()&&year==rhs.getYear())
+			return true;
+		else if(day>rhs.getDay()&&month==rhs.getMonth()&&year==rhs.getYear())
+			return true;
+
+		return false;
 }
